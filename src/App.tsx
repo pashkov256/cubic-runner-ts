@@ -78,12 +78,13 @@ const App: React.FC = () => {
               let newArr = [...rest, generateNewObject()]
               if(indexFloor === gameStats.playerPosition.current[0]){
                 if( newArr[gameStats.playerPosition.current[1]] === 1){
-                  setIsGameOver(true)
                   const lsMaxScore = localStorage.getItem('maxScore')
                
                   if(gameStats.score >= Number(lsMaxScore) && lsMaxScore !== null){
                       localStorage.setItem('maxScore',`${gameStats.score}`)
                   }
+                  setIsGameOver(true)
+                 
                 }
                 newArr[gameStats.playerPosition.current[1]-1] =0
                 newArr[gameStats.playerPosition.prev[1]-1] =2

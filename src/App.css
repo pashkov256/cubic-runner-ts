@@ -115,3 +115,7 @@
     filter: hue-rotate(360deg);
   }
 }
+
+.red{
+  background-color: blue!important;
+}
