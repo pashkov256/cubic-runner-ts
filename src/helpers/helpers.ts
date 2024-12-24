@@ -8,7 +8,7 @@ export const generateNewObject = (): FloorType => {
     return 4; // 1% шанс
   } else if (randomValue < 0) {
     return 3; // 2% шанс
-  } else if (randomValue < 0.06) {
+  } else if (randomValue < 0.03) {
     return 1; // 3% шанс
   } else {
     return 0; // 94% шанс

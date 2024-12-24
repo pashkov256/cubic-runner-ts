@@ -5,18 +5,6 @@ import { WordsActionsList } from './components/WordsActionsList/WordsActionsList
 import { generateNewObject } from './helpers/helpers';
 import { Floors } from './types/IFloor';
 
-const initial:Floors = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0,  0, 0,  0,0, generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
-
-]
 
 const gameStatsInitial = {playerPosition: {
   prev: [4, 5],
@@ -26,6 +14,19 @@ const gameStatsInitial = {playerPosition: {
 }
 
 const App: React.FC = () => {
+  const initial:Floors = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0,  0, 0,  0,0, generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(),  generateNewObject(), generateNewObject(), generateNewObject(), generateNewObject()],
+  
+  ]
+  
   const [floors, setFloors] = useState<Floors>(initial);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [isGameOver,setIsGameOver] = useState<boolean | null>(null)
